@@ -3,94 +3,430 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wenhan Tao</title>
+  <title>Wenhan Tao | Ph.D. Student</title>
+  <meta name="description" content="Wenhan Tao - Ph.D. Student in Computer Science at Texas State University" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f8f9fb;
+    :root{
+      --bg:#0b1220;
+      --panel:#111a2b;
+      --panel-2:#0f1727;
+      --card:#121c30;
+      --text:#e8eefc;
+      --muted:#a8b3c8;
+      --line:rgba(255,255,255,.08);
+      --accent:#6ea8ff;
+      --accent-2:#8f7dff;
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --maxw:1100px;
     }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(700px 300px at 10% -10%, rgba(110,168,255,.20), transparent 70%),
+        radial-gradient(700px 300px at 90% -10%, rgba(143,125,255,.18), transparent 70%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.65;
     }
-    h1 {
-      margin-top: 0;
-      font-size: 2rem;
-      color: #1f2937;
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:26px auto 50px;
+      padding:0 18px;
     }
-    h2 {
-      margin-top: 28px;
-      color: #374151;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 6px;
+
+    .hero{
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap:20px;
+      background:linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(8px);
     }
-    a {
-      color: #2563eb;
-      text-decoration: none;
+
+    .avatar{
+      width:160px;
+      height:160px;
+      border-radius:18px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      box-shadow:0 10px 25px rgba(0,0,0,.28);
+      background:#0d1422;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .hero h1{
+      margin:0 0 4px 0;
+      font-size:2rem;
+      line-height:1.15;
+      letter-spacing:.2px;
     }
-    .muted {
-      color: #6b7280;
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:1rem;
     }
-    ul {
-      padding-left: 20px;
+    .hero p{
+      margin:12px 0 0 0;
+      color:#d7e1f7;
+      max-width:760px;
     }
-    .section {
-      margin-top: 16px;
+
+    .chips{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#d9e4fb;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.9rem;
+    }
+
+    .btns{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .btn{
+      display:inline-block;
+      padding:9px 14px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#fff;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      border:none;
+      box-shadow:0 10px 22px rgba(110,168,255,.25);
+    }
+    .btn:hover{text-decoration:none; filter:brightness(1.03);}
+
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .side{
+      padding:16px;
+      height:max-content;
+      position:sticky;
+      top:16px;
+    }
+
+    .side h3{
+      margin:2px 0 10px 0;
+      font-size:.95rem;
+      color:#dbe6ff;
+      letter-spacing:.3px;
+    }
+    .side-section{
+      padding-top:12px;
+      margin-top:12px;
+      border-top:1px solid var(--line);
+    }
+    .side ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .side li{ margin:6px 0; }
+
+    .contact-line{
+      color:var(--muted);
+      margin:6px 0;
+      word-break: break-word;
+    }
+
+    .main{
+      padding:16px;
+    }
+
+    .section{
+      background:rgba(255,255,255,.015);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      margin-bottom:14px;
+    }
+    .section h2{
+      margin:0 0 8px 0;
+      font-size:1.05rem;
+      color:#f0f5ff;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .section h2::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+    .section p{ margin:0; color:#d3ddf2; }
+
+    .item{
+      padding:10px 0;
+      border-top:1px solid var(--line);
+    }
+    .item:first-child{ border-top:none; padding-top:2px; }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .title{
+      font-weight:700;
+      color:#f4f7ff;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:.93rem;
+    }
+    .date{
+      color:#b7c3dc;
+      font-size:.88rem;
+      white-space:nowrap;
+    }
+
+    .tags{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .tag{
+      background:rgba(110,168,255,.08);
+      border:1px solid rgba(110,168,255,.22);
+      color:#d5e5ff;
+      border-radius:999px;
+      padding:4px 8px;
+      font-size:.78rem;
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:.88rem;
+      padding:8px 0 2px;
+    }
+
+    @media (max-width: 900px){
+      .hero{
+        grid-template-columns: 1fr;
+      }
+      .avatar{
+        width:120px; height:120px;
+      }
+      .grid{
+        grid-template-columns: 1fr;
+      }
+      .side{
+        position:static;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Wenhan Tao</h1>
-    <p class="muted">
-      Ph.D. Student in Computer Science, Texas State University
-    </p>
+  <div class="wrap">
 
-    <div class="section">
-      <p>
-        I am a Ph.D. student in Computer Science at Texas State University.
-        My research interests include object detection, multimodal learning,
-        computer vision, and intelligent multimedia systems.
-      </p>
+    <section class="hero">
+      <img src="person.jpeg" alt="Wenhan Tao" class="avatar" />
+      <div>
+        <h1>Wenhan Tao</h1>
+        <p class="subtitle">Ph.D. Student in Computer Science · Texas State University</p>
+        <p>
+          I am a Ph.D. student at Texas State University working on computer vision and multimodal learning,
+          with a focus on object detection and intelligent multimedia systems.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Object Detection</span>
+          <span class="chip">Multimodal Learning</span>
+          <span class="chip">Computer Vision</span>
+          <span class="chip">Multimedia Systems</span>
+        </div>
+
+        <div class="btns">
+          <a class="btn primary" href="CV_WenhanTao.pdf" target="_blank">Download CV</a>
+          <a class="btn" href="mailto:qoa10@txstate.edu">Email</a>
+          <a class="btn" href="#">Google Scholar</a>
+          <a class="btn" href="#">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <aside class="card side">
+        <div>
+          <h3>Contact</h3>
+          <div class="contact-line">✉️ qoa10@txstate.edu</div>
+          <div class="contact-line">📍 San Marcos, TX, USA</div>
+        </div>
+
+        <div class="side-section">
+          <h3>Research Interests</h3>
+          <ul>
+            <li>Object Detection</li>
+            <li>Multimodal Learning</li>
+            <li>Computer Vision</li>
+            <li>Intelligent Multimedia Systems</li>
+          </ul>
+        </div>
+
+        <div class="side-section">
+          <h3>Education Snapshot</h3>
+          <ul>
+            <li>Ph.D., CS · Texas State University</li>
+            <li>M.S., CS · Texas State University</li>
+            <li>B.E., Data Science · Yancheng Normal University</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="card main">
+        <section class="section">
+          <h2>About</h2>
+          <p>
+            My current research focuses on multimodal visual understanding and robust object detection in
+            challenging environments. I am interested in designing practical AI systems for real-world
+            multimedia and vision applications.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+
+          <div class="item">
+            <div class="top">
+              <div>
+                <div class="title">Texas State University</div>
+                <div class="sub">Ph.D. in Computer Science</div>
+              </div>
+              <div class="date">Jan 2026 – Present</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="top">
+              <div>
+                <div class="title">Texas State University</div>
+                <div class="sub">M.S. in Computer Science · GPA: 3.67/4.0</div>
+              </div>
+              <div class="date">Sep 2024 – Jan 2026</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="top">
+              <div>
+                <div class="title">Yancheng Normal University (China)</div>
+                <div class="sub">B.E. in Data Science and Big Data Technology · Top 5%</div>
+              </div>
+              <div class="date">Sep 2020 – Jun 2024</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Selected Publications</h2>
+
+          <div class="item">
+            <div class="title">Evaluating the Quality of Experience of VR Applications in a Charade Game Environment</div>
+            <div class="sub">Orhunova, P.; <strong>Tao, W.</strong>; Farias, M. · IEEE Pulse · 2025</div>
+          </div>
+
+          <div class="item">
+            <div class="title">Image and Video Repair System based on Deep Learning</div>
+            <div class="sub">Software Copyright Registration · 2023</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Selected Projects</h2>
+
+          <div class="item">
+            <div class="top">
+              <div>
+                <div class="title">Bat Motion Target Detection in Low-Light Videos</div>
+                <div class="sub">Research Assistant · Texas State University</div>
+              </div>
+              <div class="date">2025 – Present</div>
+            </div>
+            <p style="margin-top:8px;">
+              Built a low-light bat detection pipeline using YOLO-based models and motion-aware preprocessing
+              for robust detection and tracking in challenging video conditions.
+            </p>
+            <div class="tags">
+              <span class="tag">YOLO</span>
+              <span class="tag">Low-light Vision</span>
+              <span class="tag">Detection</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="top">
+              <div>
+                <div class="title">QoE in VR Communication Applications</div>
+                <div class="sub">Immersive Media Group · Texas State University</div>
+              </div>
+              <div class="date">2024 – 2025</div>
+            </div>
+            <p style="margin-top:8px;">
+              Supported VR/XR QoE experiments, session operations, and evaluation workflows, contributing to
+              an IEEE Pulse publication.
+            </p>
+            <div class="tags">
+              <span class="tag">VR</span>
+              <span class="tag">QoE</span>
+              <span class="tag">XR</span>
+              <span class="tag">User Study</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Contact</h2>
+          <p>
+            Email: <a href="mailto:qoa10@txstate.edu">qoa10@txstate.edu</a><br/>
+            Location: San Marcos, Texas, United States
+          </p>
+        </section>
+
+        <div class="footer">© 2026 Wenhan Tao</div>
+      </main>
     </div>
-
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:qoa10@txstate.edu">qoa10@txstate.edu</a><br />
-      Location: San Marcos, TX, USA
-    </p>
-
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Object Detection</li>
-      <li>Multimodal Learning</li>
-      <li>Computer Vision</li>
-      <li>Multimedia Analysis</li>
-    </ul>
-
-    <h2>Publications</h2>
-    <ul>
-      <li>
-        Orhunova, P., <strong>Tao, W.</strong>, and Farias, M. (2025).
-        Evaluating the Quality of Experience of VR Applications in a Charade Game Environment.
-        <em>IEEE Pulse</em>, 16(1), 32–34.
-      </li>
-    </ul>
-
-    <h2>CV</h2>
-    <p>
-      <a href="CV_WenhanTao.pdf" target="_blank">Download CV (PDF)</a>
-    </p>
   </div>
 </body>
 </html>
